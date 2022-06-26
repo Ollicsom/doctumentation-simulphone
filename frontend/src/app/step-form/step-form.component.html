@@ -1,0 +1,20 @@
+<div>
+  <form [formGroup]="stepForm" class="d-flex flex-column">
+    <label for="ordre">Ordre: </label>
+    <input id="ordre" type="number" min="0" formControlName="ordre" (change)="onInputChange()">
+  
+    <label for="title">Titre: </label>
+    <input id="title" type="text" formControlName="title" (change)="onInputChange()">
+
+    <label for="description">Description: </label>
+    <input id="description" type="text" formControlName="description" (change)="onInputChange()">
+
+    <label for="url">Image: </label>
+    <input id="url" type="file" (change)="onImageChange($event)" accept=".giff,.png,.jpg,.jpeg">
+  </form>
+  <mat-dialog-actions *ngIf="!step">
+    <button mat-button [mat-dialog-close]="stepForm.value" color="warn" cdkFocusInitial>Valider</button>
+    <button mat-button mat-dialog-close>Annuler</button>
+  </mat-dialog-actions>
+</div>
+

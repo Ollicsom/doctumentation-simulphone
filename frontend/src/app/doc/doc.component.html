@@ -1,0 +1,8 @@
+<div class="w-100 mt-5 d-flex flex-column align-items-center">
+    <h1 class="w-100 text-center">Tutoriel : Prise en main de SimulPhone</h1>
+
+    <div class="d-flex w-75 flex-column" *ngFor='let step of steps; let index = index;'>
+        <app-step class="w-100" [step]=step [index]=index></app-step>
+    </div>
+</div>
+
